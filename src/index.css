@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Valley Mist Luxury Estate Design System
+Deep forest green, warm beige, soft white, gold accents
+Playfair Display (serif) + Inter (sans-serif)
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 36 33% 97%; /* soft warm white */
+    --foreground: 82 35% 25%; /* olive green text matching logo */
+
+    /* Surface Colors */
+    --card: 0 0% 100%; /* pure white cards */
+    --card-foreground: 82 35% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 82 35% 25%;
+
+    /* Brand Primary - Logo Mountain Green */
+    --primary: 82 35% 32%; /* olive mountain green from logo */
+    --primary-foreground: 36 33% 97%; /* soft white text on primary */
+
+    /* Secondary - Warm Beige */
+    --secondary: 36 25% 88%; /* muted warm beige */
+    --secondary-foreground: 82 35% 25%;
+
+    /* Muted tones */
+    --muted: 36 15% 92%; /* very light beige */
+    --muted-foreground: 82 25% 45%; /* muted olive green */
+
+    /* Accent - Logo Gold/Brown */
+    --accent: 35 65% 55%; /* warm golden brown from logo text */
+    --accent-foreground: 36 33% 97%;
+
+    /* Trust/Success indicators */
+    --success: 82 50% 45%; /* brighter olive green */
+    --success-foreground: 36 33% 97%;
+
+    /* System colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 36 33% 97%;
+
+    --border: 36 15% 85%; /* subtle beige border */
+    --input: 36 15% 90%; /* light beige input bg */
+    --ring: 35 65% 55%; /* golden brown focus ring matching logo */
+
+    --radius: 0.75rem; /* slightly more rounded for luxury feel */
+
+    /* Luxury Design Tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(82 35% 32%) 0%, hsl(82 40% 35%) 50%, hsl(82 45% 38%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(35 65% 55%) 0%, hsl(40 70% 60%) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(82 35% 32% / 0.8) 100%);
+    
+    /* Elegant Shadows */
+    --shadow-luxury: 0 20px 50px -12px hsl(82 35% 32% / 0.15);
+    --shadow-card: 0 4px 20px -4px hsl(82 25% 40% / 0.1);
+    --shadow-gold: 0 0 30px hsl(35 65% 55% / 0.3);
+    
+    /* Smooth Transitions */
+    --transition-luxury: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: all 0.3s ease-out;
+  }
+
+  /* Remove dark mode for luxury single-page site */
+  
+  /* Custom Typography Classes */
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Luxury Component Styles */
+  .hero-text {
+    @apply font-serif font-semibold text-6xl lg:text-7xl leading-tight;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .section-heading {
+    @apply font-serif font-semibold text-4xl lg:text-5xl text-primary;
+  }
+  
+  .elegant-card {
+    @apply bg-card/80 backdrop-blur-sm rounded-xl border border-border/50;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .trust-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-success/10 text-success font-medium rounded-full border border-success/20;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Remove default margins and improve text rendering */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
